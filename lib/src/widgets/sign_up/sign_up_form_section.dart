@@ -150,7 +150,7 @@ class SignUpFormSection extends StatelessWidget {
                 backgroundColor: Colors.orange,
                 padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(28),
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
               child: Text(
