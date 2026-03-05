@@ -20,7 +20,7 @@ class ProductInfo extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: const Color(0xFFEA8735).withOpacity(0.1),
+              color: const Color(0xFFEA8735).withOpacity(0.12),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
@@ -58,14 +58,16 @@ class ProductInfo extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
                 color: product.stock > 0
-                    ? Colors.green.withOpacity(0.1)
-                    : Colors.red.withOpacity(0.1),
+                    ? const Color(0xFFEA8735).withOpacity(0.12)
+                    : Colors.red.withOpacity(0.12),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
                 product.stock > 0 ? 'In Stock' : 'Out of Stock',
                 style: TextStyle(
-                  color: product.stock > 0 ? Colors.green : Colors.red,
+                  color: product.stock > 0
+                      ? const Color(0xFFEA8735)
+                      : Colors.red,
                   fontWeight: FontWeight.w600,
                   fontSize: 12,
                 ),

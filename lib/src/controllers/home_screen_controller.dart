@@ -7,8 +7,8 @@ class HomeScreenController extends GetxController {
   final isLoading = false.obs;
   final error = Rx<String?>(null);
   final categoryList = <String>[].obs;
-  late List<int> randomIndexes;
-  late List<int> randomIndexes2;
+  List<int> randomIndexes = [];
+  List<int> randomIndexes2 = [];
 
   final Dio _dio = Dio(
     BaseOptions(
@@ -45,6 +45,7 @@ class HomeScreenController extends GetxController {
         // Initialize random indexes after getting categories
         if (categoryList.isNotEmpty) {
           _initializeIndexes();
+          categoryList.refresh();
         }
       } else {
         error.value = 'Failed to load categories: ${response.statusCode}';

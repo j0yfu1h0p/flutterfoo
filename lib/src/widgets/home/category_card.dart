@@ -29,9 +29,32 @@ class CategoryCard extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               imageUrl.startsWith('http')
-                  ? Image.network(imageUrl, fit: BoxFit.cover)
-                  : Image.asset(imageUrl, fit: BoxFit.cover),
-              Container(color: Colors.black.withOpacity(0.25)),
+                  ? Image.network(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: const Color(0xFFFFECDF),
+                          child: const Icon(
+                            Icons.image_not_supported_outlined,
+                            color: Color(0xFFEA8735),
+                          ),
+                        );
+                      },
+                    )
+                  : Image.asset(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: const Color(0xFFFFECDF),
+                          child: const Icon(
+                            Icons.image_not_supported_outlined,
+                            color: Color(0xFFEA8735),
+                          ),
+                        );
+                      },
+                    ),
               Center(
                 child: Text(
                   title,

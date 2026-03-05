@@ -34,7 +34,7 @@ class ProductGridCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: const Color.fromARGB(79, 0, 0, 0),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -48,7 +48,7 @@ class ProductGridCard extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: bgColor.withOpacity(0.3),
+                  color: bgColor,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),

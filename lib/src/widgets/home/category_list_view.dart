@@ -6,12 +6,12 @@ import 'package:flutterfoo/src/widgets/skeleton_card.dart';
 
 class CategoryListView extends StatelessWidget {
   final HomeScreenController controller;
-  final List<int> randomIndexes;
+  final bool useSecondaryList;
 
   const CategoryListView({
     Key? key,
     required this.controller,
-    required this.randomIndexes,
+    this.useSecondaryList = false,
   }) : super(key: key);
 
   @override
@@ -23,6 +23,10 @@ class CategoryListView extends StatelessWidget {
     return SizedBox(
       height: cardHeight,
       child: Obx(() {
+        final indexes = useSecondaryList
+            ? controller.randomIndexes2
+            : controller.randomIndexes;
+
         if (controller.isLoading.value) {
           return ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -43,12 +47,19 @@ class CategoryListView extends StatelessWidget {
           return const Center(child: Text('No categories available'));
         }
 
+        if (indexes.isEmpty) {
+          return const Center(child: Text('No items available'));
+        }
+
         return ListView.builder(
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          itemCount: randomIndexes.length,
+          itemCount: indexes.length,
           itemBuilder: (BuildContext context, int index) {
-            final randomIndex = randomIndexes[index];
+            final randomIndex = indexes[index];
+            if (randomIndex >= controller.categoryList.length) {
+              return const SizedBox.shrink();
+            }
             final categoryName = controller.categoryList[randomIndex];
             final imageUrl = controller.getCategoryImageUrl(categoryName);
 

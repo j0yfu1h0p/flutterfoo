@@ -124,16 +124,13 @@ class HomeScreen extends StatelessWidget {
 
                     // Special for you Section
                     const SectionHeader(title: 'Special for you'),
-                    CategoryListView(
-                      controller: controller,
-                      randomIndexes: controller.randomIndexes,
-                    ),
+                    CategoryListView(controller: controller),
 
                     // Popular Products Section
                     const SectionHeader(title: 'Popular Products'),
                     CategoryListView(
                       controller: controller,
-                      randomIndexes: controller.randomIndexes2,
+                      useSecondaryList: true,
                     ),
 
                     const SizedBox(height: 20),
