@@ -42,8 +42,7 @@ class _SignUpState extends State<SignUp> {
     if (!_signUpController.isPasswordValid) {
       return;
     }
-
-    // get.toNamed('/home');
+    Get.toNamed('/otp_verification');
   }
 
   @override

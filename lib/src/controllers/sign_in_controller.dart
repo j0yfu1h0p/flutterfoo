@@ -38,7 +38,7 @@ class SignInController extends GetxController {
     Get.snackbar(
       'Success',
       message,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
       backgroundColor: Colors.green.shade100,
       colorText: Colors.green.shade900,
     );
@@ -48,7 +48,7 @@ class SignInController extends GetxController {
     Get.snackbar(
       'Error',
       message,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
       backgroundColor: Colors.red.shade100,
       colorText: Colors.red.shade900,
     );
@@ -58,7 +58,7 @@ class SignInController extends GetxController {
     Get.snackbar(
       'Validation Error',
       message,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
       backgroundColor: Colors.orange.shade100,
       colorText: Colors.orange.shade900,
     );

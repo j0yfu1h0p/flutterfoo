@@ -39,6 +39,8 @@ dependencies:
   hugeicons: ^1.1.5
   dio: ^5.9.2
   shared_preferences: ^2.5.4
+  smooth_scroll_multiplatform: ^1.0.8
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +67,23 @@ flutter:
     - assets/images/coursal1.png
     - assets/images/coursal2.png
     - assets/images/coursal3.png
+    - assets/category-list/
+  fonts:
+    - family: SpaceGrotesk
+      fonts:
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Light.ttf
+          weight: 300
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Bold.ttf
+          weight: 700
+
+
+  
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
